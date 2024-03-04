@@ -785,7 +785,8 @@ header{
     left: 0;
   }
   header {
-    height: 400vh;
+    height: 580vh;
+    margin-top: 155px;
   }
   header .container-cardapio {
     width: 100%;
