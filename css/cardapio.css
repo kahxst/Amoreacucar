@@ -1,0 +1,866 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Livvic", sans-serif;
+  transition: 0.2s linear;
+}
+
+html {
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "better";
+  src: url(../fontes/Better\ Together\ Script.ttf);
+}
+/*animaçoes scroll começo*/
+[data-anime] {
+  opacity: 0;
+  transition: 0.3s;
+}
+
+[data-anime=left] {
+  transform: translate3d(-100px, 0, 0);
+}
+
+[data-anime=right] {
+  transform: translate3d(100px, 0, 0);
+}
+
+[data-anime].animate {
+  opacity: 1;
+  transform: translate3d(0px, 0px, 0px);
+}
+
+/*animaçoes scroll fim*/
+@keyframes subirDescer {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* ajuste a altura desejada */
+  }
+}
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #CC3D69;
+}
+
+.img {
+  height: 100%;
+}
+.img img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ... Restante do seu código ... */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 15px;
+  transform: translateY(-99%);
+  width: 100%;
+}
+
+.ham {
+  display: none;
+  padding-left: 10px;
+  position: fixed;
+  left: 1px;
+  top: -15px;
+  width: 100%; /* Defina a largura como 10% do contêiner pai */
+}
+
+.hamburger.active .ham {
+  top: -1.9rem;
+  background-color: #9D0030;
+}
+
+.hamburger .linha {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* ... Restante do seu código ... */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 15px;
+  transform: translateY(-99%);
+  width: 100%;
+}
+
+.hamburger.active .ham {
+  top: -2.5rem;
+  background-color: #9D0030;
+}
+
+.hamburger .linha {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+.navlink {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E7A0A9;
+  position: fixed;
+  top: 120px;
+  width: 100%;
+}
+.navlink ul {
+  display: flex;
+  width: 70%;
+  justify-content: space-around;
+  align-items: center;
+}
+.navlink ul li {
+  list-style: none;
+}
+.navlink ul li a {
+  text-decoration: none;
+  color: #f5f5f5;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+.navlink ul li:hover a {
+  border-bottom: 1px solid #9D0030;
+  padding-bottom: 5px;
+}
+
+header {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+header .container-cardapio {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header .container-cardapio .caixa-principal {
+  height: 80%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+header .container-cardapio .caixa-principal .box {
+  margin: 30px;
+  height: 45%;
+  padding: 20px;
+  width: 75%;
+  display: flex;
+  border-radius: 35px;
+  background-color: #F5F5F5;
+}
+header .container-cardapio .caixa-principal .box .img {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .container-cardapio .caixa-principal .box .img img {
+  width: 75%;
+  height: 85%;
+  border-radius: 35px;
+}
+header .container-cardapio .caixa-principal .box .txt-cardapio {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: start;
+}
+header .container-cardapio .caixa-principal .box .txt-cardapio h3 {
+  color: #9D0030;
+  font-size: 1.5rem;
+  width: 100%;
+  text-align: center;
+}
+header .container-cardapio .caixa-principal .box .txt-cardapio p {
+  color: #9D0030;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+header .container-cardapio .caixa-principal .box .txt-cardapio .sabores {
+  height: 5vh;
+  display: flex;
+  width: 85%;
+  align-items: center;
+  text-align: start;
+  justify-content: space-around;
+}
+header .container-cardapio .caixa-principal .box .txt-cardapio .sabores .sabor {
+  font-weight: 700;
+  color: #CC3D69;
+}
+header .container-cardapio .caixa-principal .box .txt-cardapio .sabores select {
+  height: 100%;
+  border-radius: 10px;
+  border: none;
+  background-color: #E7A0A9;
+  text-align: center;
+  color: #f5f5f5;
+  font-size: 1rem;
+}
+header .container-cardapio .caixa-principal .box .txt-cardapio .sabores select:focus {
+  border: none;
+}
+header .container-cardapio .caixa-principal .box .txt-cardapio .precoebtn {
+  display: flex;
+  width: 85%;
+  height: 4vh;
+  justify-content: space-between;
+  align-items: center;
+}
+header .container-cardapio .caixa-principal .box .txt-cardapio .precoebtn .preco {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+header .container-cardapio .caixa-principal .box .txt-cardapio .precoebtn a {
+  height: 100%;
+  width: 45%;
+}
+header .container-cardapio .caixa-principal .box .txt-cardapio .precoebtn a button {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-radius: 15px;
+  background-color: #CC3D69;
+  color: #f5f5f5;
+  text-transform: uppercase;
+  text-align: center;
+}
+header .container-cardapio .caixa-principal .box .txt-cardapio .precoebtn a:hover button {
+  background-color: #9D0030;
+}
+
+footer {
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E7A0A9;
+}
+footer .container-footer {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+footer .container-footer .box-ctt {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+footer .container-footer .box-ctt .title {
+  width: 100%;
+  text-align: center;
+}
+footer .container-footer .box-ctt .title h1 {
+  font-family: "better";
+  font-weight: 200;
+  font-size: 3rem;
+  color: #9D0030;
+}
+footer .container-footer .box-ctt p {
+  text-align: start;
+  font-size: 1.2rem;
+  color: #9D0030;
+}
+footer .container-footer .box-redes {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+footer .container-footer .box-redes .title {
+  width: 100%;
+  text-align: center;
+}
+footer .container-footer .box-redes .title h1 {
+  font-family: "better";
+  font-weight: 200;
+  font-size: 3rem;
+  color: #9D0030;
+}
+footer .container-footer .box-redes .box-icons {
+  display: flex;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+footer .container-footer .box-redes .box-icons a {
+  text-decoration: none;
+}
+footer .container-footer .box-redes .box-icons a .icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #9D0030;
+}
+footer .container-footer .box-redes .box-icons a .icon i {
+  color: #f5f5f5;
+  font-size: 1.8rem;
+}
+footer .container-footer .box-redes .box-icons a .icon:hover {
+  background-color: #CC3D69;
+}
+
+@media screen and (max-width: 958px) {
+  .links {
+    transform: translateX(-100%);
+    flex-direction: column;
+    position: fixed;
+    top: 4vh;
+    left: -15px;
+    background-color: #9D0030;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+  }
+  .links.show {
+    position: fixed;
+    top: 134px;
+    width: 100%;
+    transform: translateX(0);
+  }
+  li {
+    padding: 10px;
+  }
+  .ham {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    position: absolute;
+    left: 1px;
+    top: -15px;
+    width: 100%; /* Defina a largura como 10% do contêiner pai */
+  }
+  .hamburger .linha {
+    margin: 2.5px 0;
+  }
+  .hamburger {
+    display: flex;
+    top: 39px;
+  }
+  .hamburger.active .linha:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .hamburger.active .linha:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .linha:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  /* Adicione o seguinte bloco para ajustar o posicionamento da segunda e terceira ul */
+  ul:nth-child(2),
+  ul:nth-child(3) {
+    top: 228px;
+    position: absolute; /* Ajuste conforme necessário */
+    top: 190px;
+  }
+  li:nth-child(2),
+  li:nth-child(3) {
+    margin: 45px; /* Ajuste conforme necessário */
+  }
+  header {
+    height: 415vh;
+    margin-top: 138px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+  }
+  header .container-cardapio {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+  }
+  header .container-cardapio .caixa-principal {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  header .container-cardapio .caixa-principal .box {
+    margin: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 750px;
+    padding: 20px;
+    display: flex;
+    border-radius: 35px;
+    background-color: #F5F5F5;
+  }
+  header .container-cardapio .caixa-principal .box .img {
+    width: 100%;
+    height: 60%;
+  }
+  header .container-cardapio .caixa-principal .box .img img {
+    width: 65%;
+    border-radius: 35px;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio h3 {
+    font-size: 1.1rem;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio p {
+    font-size: 1rem;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio .sabores {
+    height: 7vh;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    align-items: center;
+    text-align: start;
+    justify-content: space-around;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio .precoebtn {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: 8vh;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio .precoebtn .preco {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio .precoebtn a {
+    height: 100%;
+    width: 75%;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio .precoebtn a button {
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    background-color: #CC3D69;
+    color: #f5f5f5;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio .precoebtn a:hover button {
+    background-color: #9D0030;
+  }
+  footer {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E7A0A9;
+  }
+  footer .container-footer {
+    flex-direction: column;
+  }
+  footer .container-footer .box-redes {
+    height: 100%;
+    width: 100%;
+  }
+  footer .container-footer .box-redes .box-icons a .icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .links.show {
+    position: absolute;
+    top: 22px;
+    width: 100%;
+    transform: translateX(0);
+  }
+  .hamburger.active .ham {
+    top: -2.5rem;
+    background-color: #9D0030;
+  }
+  .ham {
+    left: 0;
+  }
+  header {
+    height: 400vh;
+  }
+  header .container-cardapio {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+  }
+  header .container-cardapio .caixa-principal {
+    height: 50%;
+    width: 100%;
+  
+
+  }
+  header .container-cardapio .caixa-principal .box {
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    width: 70%;
+  }
+  header .container-cardapio .caixa-principal .box .img {
+    width: 100%;
+    height: 60%;
+  }
+  header .container-cardapio .caixa-principal .box .img img {
+    width: 75%;
+    height: 100%;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio h3 {
+    font-size: 14px;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio p {
+    font-size: 14px;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio .sabores {
+    height: 7vh;
+    width: 85%;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio .precoebtn .preco {
+    font-size: 14px;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio .precoebtn a {
+    height: 100%;
+    width: 95%;
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 1500px) {
+header{
+  height: 420vh;
+}
+  header .container-cardapio {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+  }
+  header .container-cardapio .caixa-principal {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  header .container-cardapio .caixa-principal .box {
+    margin: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 550px;
+    padding: 20px;
+    display: flex;
+    border-radius: 35px;
+    background-color: #F5F5F5;
+  }
+  header .container-cardapio .caixa-principal .box .img {
+    width: 100%;
+    height: 60%;
+  }
+  header .container-cardapio .caixa-principal .box .img img {
+    width: 65%;
+    border-radius: 35px;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio h3 {
+    font-size: 1.1rem;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio p {
+    font-size: 1rem;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio .sabores {
+    height: 7vh;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    align-items: center;
+    text-align: start;
+    justify-content: space-around;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio .precoebtn {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: 8vh;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio .precoebtn .preco {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio .precoebtn a {
+    height: 100%;
+    width: 75%;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio .precoebtn a button {
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    background-color: #CC3D69;
+    color: #f5f5f5;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio .precoebtn a:hover button {
+    background-color: #9D0030;
+  }
+  footer {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E7A0A9;
+  }
+  footer .container-footer {
+    flex-direction: column;
+  }
+  footer .container-footer .box-redes {
+    height: 100%;
+    width: 100%;
+  }
+  footer .container-footer .box-redes .box-icons a .icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .links.show {
+    position: absolute;
+    top: 22px;
+    width: 100%;
+    transform: translateX(0);
+  }
+  .hamburger.active .ham {
+    top: -2.5rem;
+    background-color: #9D0030;
+  }
+  .ham {
+    left: 0;
+  }
+  header {
+    height: 400vh;
+  }
+  header .container-cardapio {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+  }
+  header .container-cardapio .caixa-principal {
+    height: 50%;
+    width: 100%;
+  
+
+  }
+  header .container-cardapio .caixa-principal .box {
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    width: 70%;
+  }
+  header .container-cardapio .caixa-principal .box .img {
+    width: 100%;
+    height: 60%;
+  }
+  header .container-cardapio .caixa-principal .box .img img {
+    width: 75%;
+    height: 100%;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio h3 {
+    font-size: 14px;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio p {
+    font-size: 14px;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio .sabores {
+    height: 7vh;
+    width: 85%;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio .precoebtn .preco {
+    font-size: 14px;
+  }
+  header .container-cardapio .caixa-principal .box .txt-cardapio .precoebtn a {
+    height: 100%;
+    width: 95%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 468px) {
+  .links.show {
+    position: absolute;
+    top: 22px;
+    width: 100%;
+    transform: translateX(0);
+  }
+  .navlink {
+    top: 120px;
+  }
+  .hamburger.active .ham {
+    top: -2rem;
+    background-color: #9D0030;
+  }
+  .ham {
+    left: 0;
+  }
+  header {
+    height: 400vh;
+  }
+  header .container-cardapio {
+    width: 100%;
+    height: 100%;
+  }
+  header .container-cardapio .caixa-principal {
+    height: 100%;
+    width: 100%;
+  }
+  header .container-cardapio .caixa-principal .box {
+    width: 90%;
+  }
+  header .container-cardapio .caixa-principal .txt-cardapio h3 {
+    font-size: 1.2rem;
+  }
+  header .container-cardapio .caixa-principal .txt-cardapio p {
+    font-size: 1.2rem;
+  }
+  header .container-cardapio .caixa-principal .txt-cardapio .sabores {
+    height: 7vh;
+    width: 85%;
+  }
+  header .container-cardapio .caixa-principal .txt-cardapio .precoebtn {
+    height: 10vh;
+  }
+  header .container-cardapio .caixa-principal .txt-cardapio .precoebtn .preco {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 280px) {
+  .links.show {
+    position: absolute;
+    top: 22px;
+    width: 100%;
+    transform: translateX(0);
+  }
+  .navlink {
+    top: 100px;
+  }
+  .hamburger.active .ham {
+    top: -2rem;
+    background-color: #9D0030;
+  }
+  .ham {
+    left: 0;
+  }
+  header {
+    height: 250vh;
+  }
+  header .container-cardapio {
+    width: 100%;
+    height: 100%;
+  }
+  header .container-cardapio .caixa-principal {
+    height: 100%;
+    width: 100%;
+  }
+  header .container-cardapio .caixa-principal .box {
+    width: 90%;
+    height: 50%;
+  }
+  header .container-cardapio .caixa-principal .txt-cardapio h3 {
+    font-size: 1.2rem;
+  }
+  header .container-cardapio .caixa-principal .txt-cardapio p {
+    font-size: 1.2rem;
+  }
+  header .container-cardapio .caixa-principal .txt-cardapio .sabores {
+    height: 7vh;
+    width: 85%;
+  }
+  header .container-cardapio .caixa-principal .txt-cardapio .precoebtn {
+    height: 10vh;
+  }
+  header .container-cardapio .caixa-principal .txt-cardapio .precoebtn .preco {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=cardapio.css.map */
